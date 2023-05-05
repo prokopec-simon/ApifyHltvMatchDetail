@@ -17,6 +17,7 @@ const crawler = new CheerioCrawler({
         const pageContent = $("html").html();
         await Actor.pushData({
             matchId: matchId,
+            fullUrl: matchesUrl,
             pageContent: pageContent,
         });
     },
