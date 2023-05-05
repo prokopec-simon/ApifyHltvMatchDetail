@@ -7,7 +7,7 @@ const input = await Actor.getInput();
 const inputJson = JSON.stringify(input);
 const inputObject = JSON.parse(inputJson);
 const matchId = inputObject.matchId;
-const matchesUrl = "https://www.hltv.org/matches/";
+const matchesUrl = "https://www.hltv.org/matches/" + matchId + "/a";
 const startUrls = [matchesUrl];
 const proxyConfiguration = await Actor.createProxyConfiguration();
 
@@ -16,10 +16,8 @@ const crawler = new CheerioCrawler({
     async requestHandler({ $ }) {
         const pageContent = $("html").html();
         await Actor.pushData({
-            input: input,
-            inputDataType: typeof input,
             matchId: matchId,
-            content: pageContent,
+            pageContent: pageContent,
         });
     },
 });
