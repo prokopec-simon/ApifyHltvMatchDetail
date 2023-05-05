@@ -1,0 +1,11 @@
+{
+    "title": "Cheerio Crawler input",
+    "type": "object",
+    "schemaVersion": 1,
+    "properties": {  "matchId": {
+            "title": "matchId",
+            "type": "string",
+            "description": "matchId",
+            "editor": "textfield"} },
+    "required": []
+}
