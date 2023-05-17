@@ -13,7 +13,7 @@ const matchesUrl = "https://www.hltv.org/matches/" + matchId + "/a";
 const startUrls = [matchesUrl];
 const proxyConfiguration = await Actor.createProxyConfiguration({
     groups: ["RESIDENTIAL"],
-    countryCode: "PL",
+    countryCode: "CZ",
 });
 
 const crawler = new CheerioCrawler({
