@@ -2,10 +2,19 @@
     "title": "Cheerio Crawler input",
     "type": "object",
     "schemaVersion": 1,
-    "properties": {  "matchId": {
+    "properties": {
+        "matchId": {
             "title": "matchId",
             "type": "string",
             "description": "matchId",
-            "editor": "textfield"} },
-    "required": []
+            "editor": "textfield"
+        },
+        "urlTrail": {
+            "title": "urlTrail",
+            "type": "string",
+            "description": "url trail",
+            "editor": "textfield"
+        }
+    },
+    "required": ["matchId"]
 }

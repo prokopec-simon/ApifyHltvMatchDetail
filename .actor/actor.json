@@ -1,11 +1,11 @@
 {
     "actorSpecification": 1,
-    "name": "project-cheerio-crawler-typescript",
-    "title": "Project Cheerio Crawler Typescript",
-    "description": "Crawlee and Cheerio project in typescript.",
-    "version": "0.0",
+    "name": "HLTV match detail",
+    "title": "Cheerio scraper for HLTV match detail",
+    "description": "A simple crawler that returns raw page content for HLTV match detail.",
+    "version": "0.1",
     "meta": {
-         "templateId": "ts-crawlee-cheerio"
+        "templateId": "ts-crawlee-cheerio"
     },
     "input": "./input_schema.json",
     "dockerfile": "./Dockerfile"
