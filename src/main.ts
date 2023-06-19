@@ -14,16 +14,24 @@ const proxyConfiguration = await Actor.createProxyConfiguration({
     countryCode: 'CZ',
 });
 
+const fullUrl = `https://www.hltv.org/matches/${matchId}/${urlTrail}`;
+
 const crawler = new CheerioCrawler({
     proxyConfiguration,
     async requestHandler({ $ }) {
         const pageContent = $('html').html();
         await Actor.pushData({
             status: 200,
-            data: [{ matchId: matchId, rawPageContent: pageContent }],
+            data: [
+                {
+                    matchId: matchId,
+                    rawPageContent: pageContent,
+                    matchUrl: fullUrl,
+                },
+            ],
         });
     },
 });
 
-await crawler.run([`https://www.hltv.org/matches/${matchId}/${urlTrail}`]);
+await crawler.run([fullUrl]);
 await Actor.exit();
