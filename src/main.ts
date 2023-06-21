@@ -17,6 +17,7 @@ const proxyConfiguration = await Actor.createProxyConfiguration({
 const fullUrl = `https://www.hltv.org/matches/${matchId}/${urlTrail}`;
 
 const crawler = new CheerioCrawler({
+    maxRequestRetries: 10,
     proxyConfiguration,
     async requestHandler({ $ }) {
         const pageContent = $('html').html();
